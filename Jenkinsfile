@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image "mongo"
+    }
+  }
   stages {
     stage('step1') {
       environment {
