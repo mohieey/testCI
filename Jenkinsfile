@@ -1,5 +1,8 @@
 pipeline {
-  agent any
+  agent 
+    docker {
+      image "node"
+    }
   stages {
     stage('step1') {
       environment {
@@ -8,6 +11,7 @@ pipeline {
       steps {
         sh 'echo "Hello $DEMO"'
         sh 'cat package.json'
+        sh 'docker version'
       }
     }
 
