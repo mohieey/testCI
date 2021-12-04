@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image "node"
+      image "mongo"
     }
   }
   stages {
@@ -12,7 +12,7 @@ pipeline {
       steps {
         sh 'echo "Hello $DEMO"'
         sh 'cat package.json'
-        sh 'docker version'
+        sh 'mongo --version'
       }
     }
 
