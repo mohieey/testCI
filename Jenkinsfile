@@ -7,6 +7,7 @@ pipeline {
       }
       steps {
         sh 'echo "Hello $DEMO"'
+        sh 'cat package.json'
       }
     }
 
